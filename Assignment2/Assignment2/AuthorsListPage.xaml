@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment2.AuthorsListPage"
+             Title="List of Authors">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!-- Page Title -->
+            <Label 
+            Text="Author List of The Book"
+            TextColor="Black" 
+            HorizontalOptions="Center" 
+            FontSize="Medium" 
+            FontAttributes="Bold"
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=1
+          }"
+            RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.4
+          }"
+            RelativeLayout.YConstraint="{ConstraintExpression 
+            Type=Constant,
+            ElementName=banner,
+            Property=Height,
+            Factor=1, Constant=60
+          }"/>
+            <!-- ListView Container-->
+            <ListView
+            x:Name="authorsList"
+            ItemSelected="authorsList_ItemSelected"
+            RelativeLayout.YConstraint="{ConstraintExpression 
+            Type=Constant,
+            Property=Height,
+            Factor=1, Constant= 120
+          }">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding .}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

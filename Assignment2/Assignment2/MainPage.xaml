@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment2.MainPage"
+             xmlns:local="clr-namespace:Assignment2"
+             Title="Bookscape"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image 
+                Source="{local:ImageResource Assignment2.Images.BookScape.png}" 
+                HorizontalOptions="Center"
+                Margin="0,150,0,20"/>
+            <Label Text="BookScape" 
+                   FontSize="40"  
+                   FontFamily="Lobster"  
+                   FontAttributes="Bold"  
+                   TextColor="Black" 
+                   HorizontalOptions="Center"
+                   Margin="30,-10"/>
+            <Button Text="Find Your Favourite Books" 
+                    Clicked="FindFavBookButton_Clicked"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    WidthRequest="230"
+                    HorizontalOptions="Center"
+                    Margin="0,20"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+    
+</ContentPage>

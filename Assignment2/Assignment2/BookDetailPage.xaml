@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment2.BookDetailPage"
+             Title="Book Details">
+    <ContentPage.Content>
+        
+        <Grid>
+            <Grid Grid.Row="0" Margin="0,50,15,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="coverImage" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" />
+                <Label x:Name="titleText" Grid.Row="0" Grid.Column="1"  FontAttributes="Bold" TextColor="Black"/>
+                <Label x:Name="authorText" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" TextColor="Black"/>
+                <Label x:Name="publishYearText" Grid.Row="2" Grid.Column="1" FontAttributes="Bold" TextColor="Black"/>
+                <Label x:Name="editionKeyText" Grid.Row="3" Grid.Column="1" FontAttributes="Bold" TextColor="Black"/>
+                <Label x:Name="keyText" Grid.Row="4" Grid.Column="1" FontAttributes="Bold" TextColor="Black"/>
+            </Grid>
+            <Grid Grid.Row="1" Margin="70">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Text="Add to Favourites" Grid.Row="0" Grid.ColumnSpan="2"  BackgroundColor="Black"  TextColor="White" WidthRequest="230" HorizontalOptions="Center"
+                     Clicked="AddFavouriteButton_Clicked"/>
+                <Button Text="View Genres" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="Black"  TextColor="White" WidthRequest="230" HorizontalOptions="Center"
+                     Clicked="GenresButton_Clicked"/>
+                <Button Text="View Other Books By The Author(s)" Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="Black"  TextColor="White" WidthRequest="230" HorizontalOptions="Center"
+                     Clicked="AuthorButton_Clicked"/>
+            </Grid>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment2.FavouriteBookPage"
+             Title="Favourite Book List">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="searchIcon.png" Text="Search" Order="Primary" Clicked="SearchIcon_Clicked" ></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!-- Page Title -->
+            <Label 
+            Text="List of your favourite books"
+            TextColor="Black" 
+            HorizontalOptions="Center" 
+            FontSize="Medium" 
+            FontAttributes="Bold"
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=1
+          }"
+            RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.4
+          }"
+            RelativeLayout.YConstraint="{ConstraintExpression 
+            Type=Constant,
+            ElementName=banner,
+            Property=Height,
+            Factor=1, Constant=60
+          }"/>
+            <!-- ListView Container-->
+            <ListView
+            x:Name="favBookList"
+            ItemSelected="favBookList_ItemSelected"
+            IsPullToRefreshEnabled="True"
+            RefreshCommand="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing}"
+            RelativeLayout.YConstraint="{ConstraintExpression 
+            Type=Constant,
+            Property=Height,
+            Factor=1, Constant= 120
+          }">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell 
+                            Text="{Binding title}"
+                            Detail="{Binding authors}"
+                            ImageSource="{Binding cover_image}">
+                            <ImageCell.ContextActions>
+                                <MenuItem
+                                    Text="Delete"
+                                    CommandParameter="{Binding .}"
+                                    IsDestructive="True"
+                                    Clicked="DeleteMenuItem_Clicked"/>
+                            </ImageCell.ContextActions>
+                        </ImageCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
